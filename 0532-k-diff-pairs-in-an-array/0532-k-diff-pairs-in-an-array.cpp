@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-int bs(vector<int>&nums,int start, int x){
+int BinarySearch(vector<int>&nums,int start, int x){
     int end = nums.size()-1;
     while(start<=end){
         int mid = (start+end)/2;
@@ -23,7 +23,7 @@ int bs(vector<int>&nums,int start, int x){
         sort(nums.begin(),nums.end());
         set<pair<int,int>> ans;
         for(int i=0;i<nums.size();i++){
-            if(bs(nums,i+1,nums[i]+k)!=-1){
+            if(BinarySearch(nums,i+1,nums[i]+k)!=-1){
                 ans.insert({nums[i],nums[i]+k});
             }
         }
